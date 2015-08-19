@@ -119,9 +119,9 @@ bindsym $mod+b exec "firefox --ProfileManager"
 
 ### Other shortcuts
 # Volume keys
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute && killall -USR1 i3status
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute && killall -USR1 i3status
+bindsym XF86AudioMute exec amixer -q set Master toggle && killall -USR1 i3status
 
 # Choose wifi
 bindsym $mod+c exec "~/.pvt/dmenu_choose_network.sh"
@@ -134,3 +134,5 @@ bar {
 
 # start dmenu (a program launcher)
 bindsym $mod+p exec dmenu_run
+
+exec --no-startup-id /usr/bin/feh --randomize --bg-center /home/caio/my/pics/wallpapers/*
