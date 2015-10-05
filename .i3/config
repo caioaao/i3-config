@@ -108,9 +108,8 @@ bindsym $mod+Control+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit
 
-# Locks screen using xscreensaver
-bindsym $mod+mod1+l exec "xscreensaver-command -l"
-bindsym $mod+Control+l exec "xscreensaver-command -l && systemctl suspend"
+# Locks screen
+bindsym $mod+mod1+l exec i3lock -c 000000
 
 ### Main programs' shortcuts
 # This has highest precedence.
@@ -134,5 +133,12 @@ bar {
 
 # start dmenu (a program launcher)
 bindsym $mod+p exec dmenu_run
+
+# screenshot
+#whole screen
+bindsym Print exec escrotum ~/my/pics/screen-%Y-%m-%d-%H:%M:%S.png
+
+#rectangle
+bindsym $mod+Print exec escrotum -s ~/my/pics/screen-%Y-%m-%d_%H-%M-%S.png
 
 exec --no-startup-id /usr/bin/feh --randomize --bg-center /home/caio/my/pics/wallpapers/*
