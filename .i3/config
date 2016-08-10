@@ -113,7 +113,7 @@ bindsym $mod+mod1+l exec i3lock -c 000000
 
 ### Main programs' shortcuts
 # This has highest precedence.
-bindsym $mod+r exec "em"
+bindsym $mod+r exec "emacs"
 bindsym $mod+b exec "firefox --ProfileManager"
 
 ### Other shortcuts
